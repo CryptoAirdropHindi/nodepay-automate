@@ -7,12 +7,26 @@ Automate farming Nodepay Network using proxies. Please use the bypass version. I
 2. Proxies Static Residental | [FREE 10 PREMIUM PROXIES](https://www.webshare.io/?referral_code=p7k7whpdu2jg) | Good Premium Proxies (paid): [922proxy](https://www.922proxy.com/register?inviter_code=d03d4fed), [proxy-cheap](https://app.proxy-cheap.com/r/JysUiH), [infatica](https://dashboard.infatica.io/aff.php?aff=544)
 3. VPS (OPTIONAL) and Python3
 # Setup Tutorial
+
+install the repository: 
+```bash
+git clone https://github.com/CryptoAirdropHindi/nodepay-automate.git
+```
+Change directory to nodepay-automate
+```bash
+cd nodepay-automate
+```
+
 - Open [Nodepay](https://app.nodepay.ai/register?ref=ZUCBuJaIoBXLE6J) and login to dashboard
 - Press F12 or CTRL + SHIFT + I
 - Select Console
 - At the console, type ```allow pasting``` and press enter
 ![0001](https://github.com/im-hanzou/getgrass_bot/blob/main/pasting.JPG)
-- Then type ``localStorage.getItem('np_token')`` and press enter
+- Then type
+```bash
+ localStorage.getItem('np_token')
+```
+- and press enter
 ![0002](https://github.com/im-hanzou/getgrass_bot/blob/main/nodepaytoken.png)
 - The text that appears is your nodepay token and copy the text
 ### Component installation
