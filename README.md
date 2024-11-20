@@ -42,7 +42,7 @@ python -m pip install -r requirements.txt
 ### Run the Bot
 - Replace the proxies example in
  ```bash 
- proxies.txt
+nano proxies.txt
 ```
 to your own proxies, please use only 10 proxies with proxies http only.
 #### Run command
