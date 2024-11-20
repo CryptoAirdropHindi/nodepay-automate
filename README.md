@@ -40,7 +40,11 @@ apt install python3 python3-pip -y
 python -m pip install -r requirements.txt
 ```
 ### Run the Bot
-- Replace the proxies example in ```proxies.txt``` to your own proxies, please use only 10 proxies with proxies http only.
+- Replace the proxies example in
+ ```bash 
+ proxies.txt
+```
+to your own proxies, please use only 10 proxies with proxies http only.
 #### Run command
 - Run for original server:
 ```bash
