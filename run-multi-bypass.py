@@ -87,33 +87,23 @@ def divide_proxies(proxies, num_tokens):
     if not proxies:
         return []
     
+    num_tokens = min(num_tokens, len(proxies))
+    
     shuffled_proxies = proxies.copy()
     random.shuffle(shuffled_proxies)
     
     divided_proxies = [[] for _ in range(num_tokens)]
     
-    proxy_index = 0
-    for token_index in range(num_tokens):
-        if proxy_index < len(shuffled_proxies):
-            divided_proxies[token_index].append(shuffled_proxies[proxy_index])
-            proxy_index += 1
-    
-    while proxy_index < len(shuffled_proxies):
-        for token_index in range(num_tokens):
-            if len(divided_proxies[token_index]) >= 10:
-                continue
-                
-            if proxy_index < len(shuffled_proxies):
-                divided_proxies[token_index].append(shuffled_proxies[proxy_index])
-                proxy_index += 1
-            else:
-                break
-    
+    for i, proxy in enumerate(shuffled_proxies):
+        divided_proxies[i % num_tokens].append(proxy)
+    for group in divided_proxies:
+        if len(group) > 10:
+            group[:] = group[:10]
+            
     for i, proxy_group in enumerate(divided_proxies):
         logger.info(f"Token {i+1} received {len(proxy_group)} proxies")
-        
-    divided_proxies = [group for group in divided_proxies if group]
     
+    divided_proxies = [group for group in divided_proxies if group]
     return divided_proxies
 
 async def call_api(url, data, proxy, token):
